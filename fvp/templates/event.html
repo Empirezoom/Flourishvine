@@ -1,0 +1,236 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block preloader %}
+  {% include 'preloader.html' %}
+{% endblock preloader %}
+
+{% block header2 %}
+  {% include 'header2.html' %}
+{% endblock header2 %}
+
+{% block content %}
+        
+  <!-- FEATURE -->
+  <section id="event" data-stellar-background-ratio="0.5">
+     <div class="overlay"></div>
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-offset-3 col-md-6 col-sm-12">
+                    <div class="event-info">
+                         <h3> Welcome to rccg {{fvp.name|title}} </h3>
+                         <h1>
+
+                         {% if user.is_authenticated %}
+                         Dear <span style="color: coral;">{{user.username|title}}</span> welcome to our event center we keep records of users information including Birthdays,
+                         you can also like and comment on our activities.
+                         {% else %}
+                         If you are a new member you are welcome to register an account with us to gain access to comment on our chart room.
+                         {% endif %}
+                              </h1>
+                    </div>
+               </div>
+
+
+          </div>
+     </div>
+</section>
+
+   
+     <!-- FEATURE -->
+      <!-- FEATURE -->
+      <section id="feature" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-12 col-sm-12 text-center" style="height: auto;width: auto;">
+                         <div class="section-title">
+                              <h3><b>{{fvp.name|title}}Events <i class="fa fa-birthday-cake" aria-hidden="true"></i></b></h3>
+                              <h3> <img src="{% static '' %}images/bithdayjpg.jpg" class="img-responsive" alt="" ></h3> 
+                         </div>
+                    </div>
+
+                    <div class="col-lg-push-4">
+                         <ul class="nav nav-tabs" role="tablist">
+                              <li class="active"><a href="#tab01" aria-controls="tab01" role="tab" data-toggle="tab" style="font-weight: 900;">Birthdays 🎂 &nbsp;<button class="btn btn-success"> <span class="badge badge-success">{{button_count}}</span> </button></a></li>
+
+                              <li><a href="#tab02" aria-controls="tab02" role="tab" data-toggle="tab">Today🥂&nbsp;<button class="btn btn-success"> <span class="badge badge-success">{{counter}}</span> </button></a></li>
+                         </ul>
+
+                         <div class="tab-content">
+                              <div class="tab-pane active" id="tab01" role="tabpanel">
+                                   <div class="tab-pane-item">
+                                        <div class="pricing-title">
+                                             <h2><i class="fa fa-user" aria-hidden="true"></i>BirthList&nbsp;</h2>
+                                        </div>
+
+                                      
+                                           
+                                                  
+                                        <div class="pricing-thumb">
+                                             {% for birthday in birthdays %}
+                                                  <div class="testimonial-item">
+                                                       <img src="{{birthday.pix.url}}" class="img-responsive" alt="Profile picture">
+                                                       <h4 style="color: gray;font-weight: 900;">{{birthday.first_name|title}}&nbsp;{{birthday.last_name|title}}'s birthday is on <span style="color: green;">{{birthday.dob|date:"Fj"}}</span></h4> 
+                                                  </div>
+                                                  <div class="pricing-info">
+                                                       <p><span style="font-weight: 500; color: darkgreen;">We will Celebrate <Span style="font-weight: 900;">{{birthday.user.username|title}}</Span> soon 🎉</p>
+                                             </div>
+                                                  <div class="pricing-bottom">
+                                                       <a href="mailto:{{birthday.email}}" class="section-btn pricing-btn"><i class="fa fa-mail-forward" aria-hidden="true"></i> Mail!</a>
+                                                  </div>
+                                             {% endfor %}
+                                         </div>
+                                   </div>
+                              </div>
+
+
+                              <div class="tab-pane" id="tab02" role="tabpanel">
+                                  
+                                   <div class="tab-pane-item">
+                                        {% if celebrants %}
+                                        {% for celebrant in celebrants %}
+                                                            
+                                             <div class="pricing-title">
+                                                  <h2 style="font-weight: 600;">Today's&nbsp;Celebrant</h2>
+                                             </div>
+                                             <div class="pricing-thumb">
+                                                  
+                                                  <div class="testimonial-item">
+                                                       <img src="{{celebrant.pix.url}}" class="img-responsive" alt="Profile picture">
+                                                       <h4 style="color: gray;font-weight: 900;">{{celebrant.first_name|title}}&nbsp;{{celebrant.last_name|title}}'s celebrant is on <span style="color: green;">Today</span></h4> 
+                                                  </div>
+                                                  <div class="pricing-info">
+                                                       <p><span style="font-weight: 500; color: rgb(43, 43, 43);">Celebrate Our Friend <Span style="font-weight: 900;">{{celebrant.user.username|title}}</Span> And Send Birthday Wishes </p>
+                                             </div>
+                                                  <div class="pricing-bottom">
+                                                       <a href="tel:+234{{celebrant.phone}}" class="section-btn pricing-btn"><i class="fa fa-phone" aria-hidden="true"></i>Call</a>
+                                                  </div>
+                                             </div>
+                                        {% endfor %}
+                                        {% else %}
+                                        <div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/862800019?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:80rem" title="Coming Soon"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                                   {% endif %}
+                                   </div>
+                                 
+                              </div>
+                         </div>
+
+                    </div>
+
+               </div>
+          </div>
+     </section>
+
+
+  
+<!-- PRICING -->
+<section id="pricing" data-stellar-background-ratio="0.5" style="background-color: rgb(12, 26, 54);">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-12 col-sm-12">
+                    <div class="section-title">
+                         <h1 style="color: white;"><i class="fa fa-camera" aria-hidden="true">PosT </i></h1>
+                    </div>
+               </div>
+
+               
+               {% if activities %}
+                    
+                 {% for item in activities %}
+                         <div class="col-md-4 col-sm-6">
+                              <div class="pricing-thumb">
+                                   <div class="pricing-title text-center">
+                                        <h2 style="font-weight: 500;">{{item.title|title}}</h2>
+
+                                   </div>
+                                   <div class="pricing-info">
+                                   <a href="{% url 'detail' item.slug %}"><img src="{{item.active.url}}" class="img-responsive" alt=""></a>       
+                                   <i class="fa fa-clock-o" aria-hidden="true"></i>{{item.updated}}
+                                   </div>
+                                   <div class="pricing-bottom">
+                                        <form action="{% url 'post_like' %}" method="POST"> 
+                                             <input type="hidden" name="post_id" value="{{item.id}}">
+                                             {% csrf_token %}
+                                             {% if user not in post.liked.all %}
+                                             <button class="btn-success" >❤️&nbsp;&nbsp;</button><strong>{{item.liked.all.count}}like[s]</strong>
+                                             {% else %}
+                                             <button class="btn-success" >❤️&nbsp;&nbsp;</button><strong>{{item.liked.all.count}}like[s]</strong>
+                                             {% endif %}
+                                        </form>
+                                        <!--  -->
+                                        <a href="{% url 'detail' item.slug %}" class="section-btn pricing-btn"><i class="fa fa-comment" aria-hidden="true"></i><strong>{{com_count}}</strong></a>
+                                   </div>
+                              </div>
+                         </div>
+                    {% endfor %}
+                         
+               {% endif %}
+                    
+
+         
+               
+          </div>
+     </div>
+</section>   
+
+
+
+<!-- CONTACT -->
+<section id="contact" data-stellar-background-ratio="0.5">
+   <div class="container">
+     <div class="container-fluid"> 
+          <div class=" text-center">
+             <h1 class="heading"><a href="{% url 'give' %}"  class="fa "><img src="{{fvp.logo.url}}" alt="" style="height: 80px;">Project</a></h1>
+             <hr>
+          </div>
+          <div class="content">
+            <div class="slideshow">
+          
+              <!-- carousel control buttons -->
+              <button class="slide-btn slide-btn-1"></button>
+              <button class="slide-btn slide-btn-2"></button>
+              <button class="slide-btn slide-btn-3"></button>
+              <button class="slide-btn slide-btn-4"></button>
+              <!-- carousel wrapper which contains all images -->
+              <div class="slideshow-wrapper">
+                <div class="slide">
+                  <img src="{{giver.slide1.url}}" class="slide-img" alt="">
+          
+                </div>
+                <div class="slide">
+                  <img src="{{giver.slide2.url}}" class="slide-img" alt="">
+          
+                  
+                </div>
+                <div class="slide">
+                    <img src="{{giver.slide3.url}}" class="slide-img" alt=""> 
+                    
+                 </div>
+                <div class="slide">
+                  <img src="{{giver.slide4.url}}" class="slide-img" alt=""> 
+                  
+                 </div>
+              </div>    
+            </div>
+          </div>
+          </div>
+        <div class="row">
+             <div class="col-md-offset-1 col-md-10 col-sm-12">
+                 <div class="section-title">
+                      <h1>What's Threading?</h1> 
+                      <h1> <a href="{{fvp.thread_link}}" class="fa"><img src="{% static '' %}images/thred_net.jpg" alt=""style="height: 80px;">Click Here</a></h1>
+                 </div>
+             </div>
+        </div>
+   </div>
+</section> 
+{% endblock content %}
+
+
+{% block footer %}
+  {% include 'footer.html' %}
+{% endblock footer %}
+

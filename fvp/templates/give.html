@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block preloader %}
+  {% include 'preloader.html' %}
+{% endblock preloader %}
+
+{% block header2 %}
+  {% include 'header2.html' %}
+{% endblock header2 %}
+
+{% block content %}
+        
+  <!-- FEATURE -->
+  <section id="give" data-stellar-background-ratio="0.5">
+     <div class="overlay"></div>
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-offset-3 col-md-6 col-sm-12">
+                    <div class="give-info">
+                         <h3>{{giver.g_verse}} </h3>
+                         <h1>{{giver.g_head}}</h1>
+                    </div>
+               </div>
+
+
+          </div>
+     </div>
+</section>
+
+
+<!-- FEATURE -->
+ <!-- FEATURE -->
+ <section id="feature" data-stellar-background-ratio="0.5">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-12 col-sm-12">
+                    <div class="section-title">
+                         <h1>Account Details</h1>
+                    </div>
+               </div>
+
+               <div class="col-md-6 col-sm-6">
+                    <ul class="nav nav-tabs" role="tablist">
+                         <li class="active"><a href="#tab01" aria-controls="tab01" role="tab" data-toggle="tab">OFFERING</a></li>
+
+                         <li><a href="#tab02" aria-controls="tab02" role="tab" data-toggle="tab">TITHE</a></li>
+
+                         <li><a href="#tab03" aria-controls="tab03" role="tab" data-toggle="tab">Support Our Project</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                         <div class="tab-pane active" id="tab01" role="tabpanel">
+                           <div class="tab-pane-item">
+                               <h3>{{giver.offering_verse}}</h3>
+                               <p>You can make direct transfer to RCCG Flourish 
+                                   Vine Parish <span style="color: goldenrod;"><b>{{giver.offering_acc_no}} </b></span>or make all 
+                                   Cheques to RCCG Flourish Vine Parish
+                               </p>
+                          </div>
+                          <div class="tab-pane-item"> 
+                               <h2 >God Loves a Cheerful Giver</h2>   
+                          </div>
+                       </div>
+
+
+                         <div class="tab-pane" id="tab02" role="tabpanel">
+                           <div class="tab-pane active" id="tab01" role="tabpanel">
+                               <div class="tab-pane-item">
+                                   <h3>{{giver.tithe_verse}}</h3>
+                                   <p>You can make direct transfer to RCCG Flourish 
+                                       Vine Parish <span style="color: goldenrod;"><b>{{giver.tithe_acc_no}} </b></span>or make all 
+                                       Cheques to RCCG Flourish Vine Parish
+                                   </p>
+                              </div>
+                              <div class="tab-pane-item"> 
+                                   <h2 >God Loves a Cheerful Giver</h2>   
+                              </div>
+                           </div>
+                         </div>
+
+                         <div class="tab-pane" id="tab03" role="tabpanel">
+                              <div class="tab-pane-item">
+                                   <h3>{{giver.Nehemiah_verse}}</h2>
+                                   <h2 ><b>Kindly Join the Nehemiah Team</b></h2>
+                                   <p>You can make direct transfer to RCCG Flourish 
+                                       Vine Parish <span style="color: goldenrod;"><b>{{giver.Nehemiah_acc_no}} </b></span>or make all 
+                                       Cheques to RCCG Flourish Vine Parish
+                                   </p>
+                              </div>
+                              <div class="tab-pane-item"> 
+                                   <h2 >God Loves a Cheerful Giver</h2>   
+                              </div>
+                         </div>
+                    </div>
+
+               </div>
+
+               <div class="col-md-6 col-sm-6">
+                    <div class="feature-image">
+                         <img src="{{giver.slide1.url}}" class="img-responsive" alt="image">                             
+                    </div>
+               </div>
+
+          </div>
+     </div>
+</section>
+
+
+
+
+<!-- CONTACT -->
+<section id="contact" data-stellar-background-ratio="0.5">
+   <div class="container">
+     <div class="container-fluid"> 
+          <div class=" text-center">
+             <h1 class="heading"><a href="#contact"  class="fa fa-vine">IEWS</a></h1>
+             <hr>
+          </div>
+          <div class="content">
+            <div class="slideshow">
+          
+              <!-- carousel control buttons -->
+              <button class="slide-btn slide-btn-1"></button>
+              <button class="slide-btn slide-btn-2"></button>
+              <button class="slide-btn slide-btn-3"></button>
+              <button class="slide-btn slide-btn-4"></button>
+              <!-- carousel wrapper which contains all images -->
+              <div class="slideshow-wrapper">
+                <div class="slide">
+                  <img src="{{giver.slide1.url}}" class="slide-img" alt="">
+          
+                </div>
+                <div class="slide">
+                  <img src="{{giver.slide2.url}}" class="slide-img" alt="">
+          
+                  
+                </div>
+                <div class="slide">
+                    <img src="{{giver.slide3.url}}" class="slide-img" alt=""> 
+                    
+                 </div>
+                <div class="slide">
+                  <img src="{{giver.slide4.url}}" class="slide-img" alt=""> 
+                  
+                 </div>
+              </div>    
+            </div>
+          </div>
+          </div>
+        <div class="row">
+             <div class="col-md-offset-1 col-md-10 col-sm-12">
+                 <div class="section-title">
+                      <h1>What's Threading?</h1> 
+                      <h1> <a href="{{fvp.thread_link}}" class="fa"><img src="{% static '' %}images/thred_net.jpg" alt=""style="height: 80px;">Click Here</a></h1>
+                 </div>
+             </div>
+        </div>
+   </div>
+</section> 
+{% endblock content %}
+
+
+{% block footer %}
+  {% include 'footer.html' %}
+{% endblock footer %}
+

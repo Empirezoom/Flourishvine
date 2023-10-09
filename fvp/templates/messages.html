@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block preloader %}
+  {% include 'preloader.html' %}
+{% endblock preloader %}
+
+{% block header2 %}
+  {% include 'header2.html' %}
+{% endblock header2 %}
+
+{% block content %}
+      
+
+
+
+
+<section id="testimonial" data-stellar-background-ratio="0.5">
+     <div class="container">
+          <div class="row">
+               
+
+
+               <div class="col ">
+                    <div class="testimonial-info">
+                         
+                         <div class="section-title text-center">
+                              <h1 style="color: green;"><i class="fa fa-meetup" aria-hidden="true">essage center</i> </h1>
+                         </div>
+
+                         <div class="owl-carousel owl-theme">
+                              <div class="item">
+                                   <h3>   {% if messages %}
+                                        {% for item in messages %}
+                                           {{item}}
+                                        {% endfor %}
+                                      {% endif %}</h3>
+                                   <div class="testimonial-item">
+                                        <img src="{{fvp.logo.url}}" class="img-responsive" alt="logo">
+                                        <h4>{{fvp.name}}</h4>
+                                   </div>
+                              </div>
+
+                              <div class="item">
+                                   <h3>Thank You 
+                                        {% if user.is_authenticated %}
+                                            Dear {{user.username}}
+                                             {% else %}
+                                             Sir/Ma
+                                        {% endif %}       
+                                        .
+                                   </h3>
+                                   <div class="testimonial-item">
+                                        <img src="{{fvp.logo.url}}" class="img-responsive" alt="logo">
+                                        <h4>{{fvp.name}}</h4>
+                                   </div>
+                              </div>
+
+                         </div>
+
+                    </div>
+               </div>
+               
+          </div>
+     </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
+
+
+{% block footer %}
+  {% include 'footer.html' %}
+{% endblock footer %}
+

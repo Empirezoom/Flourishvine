@@ -1,0 +1,326 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block preloader %}
+  {% include 'preloader.html' %}
+{% endblock preloader %}
+
+{% block header %}
+  {% include 'header.html' %}
+{% endblock header %}
+
+{% block content %}
+       <!-- FEATURE -->
+       <section id="home" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+             <div class="row">
+<br><br>
+                  <div class="col-md-offset-3 col-md-6 col-sm-12">
+                       <div class="home-info">
+                            <h3 style="font-size: larger;">Welcome To Flourish Vine Parish</h3>
+                            <h1>We help you Develop Your spiritual Life!</h1>
+                            <h3 style="color: white;font-weight: 600;">Theme of the Month :</h3>
+                         </div>
+                         <img src="{{fvp.montheme.url}}" alt="" style="width:100%;">
+                     
+                  </div>
+                  <img src="{% static '' %}images/JESUS THESAME YESTERDAY, TODAY AND FOR EVER.png" alt="" style="width:100%;">
+                  <a href=""><img src="{% static '' %}images/WORD, PRAYER, WORSHIP.png" alt="" style="width: 100%;"></a>
+
+             </div>
+        </div>
+   </section>
+
+
+   <!-- FEATURE -->
+    <!-- FEATURE -->
+    <section id="feature" data-stellar-background-ratio="0.5">
+        <div class="container">
+             <div class="row">
+
+                  <div class="col-md-12 col-sm-12">
+                       <div class="section-title">
+                            <h1>What you get</h1>
+                       </div>
+                  </div>
+
+                  <div class="col-md-6 col-sm-6">
+                       <ul class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#tab01" aria-controls="tab01" role="tab" data-toggle="tab">The word</a></li>
+
+                            <li><a href="#tab02" aria-controls="tab02" role="tab" data-toggle="tab">Weekly programs</a></li>
+
+                            <li><a href="#tab03" aria-controls="tab03" role="tab" data-toggle="tab">Support</a></li>
+                       </ul>
+
+                       <div class="tab-content">
+                            <div class="tab-pane active" id="tab01" role="tabpanel">
+                                 <div class="tab-pane-item">
+                                      <h2>Open Heavens</h2>
+                                      <p> Welcome to Pastor E. A. Adeboye's Open Heaven Daily Devotional 2023 Version.</p>
+                                      <a href="{{feat.openheaven_link}}" class="section-btn ">Join now</a>
+                                 </div>
+                                 <div class="tab-pane-item">
+                                      <h2>Sunday School</h2>
+                                      <p>A sunday school missed is like a treasure thrown into a river.</p>
+                                   <a href="{{feat.sunday_link}}" class="section-btn ">Join now</a>
+                                 </div>
+                            </div>
+
+
+                            <div class="tab-pane" id="tab02" role="tabpanel">
+                                 <div class="tab-pane-item">
+                                      <h2>Digging Deep</h2>
+                                      <p>Deep Lessons are part of the weekly services which takes place in all RCCG churches .</p>
+                                      <p>Join us every Tuesday's at our <a href="#map" class="fa fa-map-marker">location</a> .</p>
+                                      <p><b>Time:</b>{{feat.time}}</p>
+                                 </div>
+                                 <div class="tab-pane-item">
+                                      <h2>Faith clinic</h2>
+                                      <p>Redeemed Christian Church of God Solution Centre Where the Word Changes your World. Transforming Lives and Restoring Hope.</p>
+                                      <p>Join us every Thursday's at our <a href="#map" class="fa fa-map-marker">location</a> .</p>
+                                      <p><b>Time:</b>{{feat.time}}</p>
+                                 </div>
+                            </div>
+
+                            <div class="tab-pane" id="tab03" role="tabpanel">
+                                 <div class="tab-pane-item">
+                                      <h2>Mission and Vission Statement</h2>
+                                      <p>{{feat.mission}}</p>
+                                 </div>
+                                 <div class="tab-pane-item">
+                                      <h2>CSR</h2>
+
+                                      <p>
+                                           <b>Why we do it?</b>
+                                           {{feat.csr}}</p>
+                                 </div>
+                            </div>
+                       </div>
+
+                  </div>
+
+                  <div class="col-md-6 col-sm-6">
+                       <div class="feature-image">
+                            <img src="{{feat.fet_img.url}}" class="img-responsive" alt="Bible image">                             
+                       </div>
+                  </div>
+
+             </div>
+        </div>
+   </section>
+
+
+ <!-- ABOUT -->
+ <section id="about" data-stellar-background-ratio="0.5" style="background-color: rgb(12, 26, 54);">
+   <div class="container">
+        <div class="row">
+
+             <div class="col-md-offset-3 col-md-6 col-sm-12">
+                  <div class="section-title">
+                       <h1 style="color: white;font-weight: 600;">{{about.sub_header}}</h1>
+                  </div>
+             </div>
+
+             <div class="col-md-4 col-sm-4">
+                  <div class="team-thumb">
+                       <img src="{{about.img1.url}}" class="img-responsive" alt="{{about.team1}}">
+                       <div class="team-info team-thumb-up">
+                            <h2>{{about.team1}} </h2>
+                            <small>Parish Pastor</small>
+                            <p>{{about.txt1}}</p>
+                       </div>
+                  </div>
+             </div>
+
+             <div class="col-md-4 col-sm-4">
+                  <div class="team-thumb">
+                       <div class="team-info team-thumb-down">
+                            <h2>{{about.team2}}r</h2>
+                            <small>Choir Leader</small>
+                            <p>{{about.txt2}}.</p>
+                       </div>
+                       <img src="{{about.img2.url}}" class="img-responsive" alt="{{about.team2}}">
+                  </div>
+             </div>
+
+             <div class="col-md-4 col-sm-4">
+                  <div class="team-thumb">
+                       <img src="{{about.img3.url}}" class="img-responsive" alt="{{about.team3}}">
+                       <div class="team-info team-thumb-up">
+                            <h2>{{about.team3}} </h2>
+                            <small>Assistant Pastor</small>
+                            <p>{{about.txt3}}.</p>
+                       </div>
+                  </div>
+             </div>               
+        </div>
+   </div>
+</section>
+<section id="map">
+<!-- map  -->
+<div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.8794183576447!2d3.3738808108588216!3d6.5369089229794755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8d0bb8c23b1d%3A0x7c27309766aa3129!2sRCCG%20Flourish%20Vine%20Parish!5e0!3m2!1sen!2sng!4v1690932129617!5m2!1sen!2sng" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>    
+</section>
+
+
+  <!-- TESTIMONIAL -->
+  <section id="testimonial" data-stellar-background-ratio="0.5">
+   <div class="container">
+        <div class="row">
+
+             <div class="col-md-6 col-sm-12">
+                  <div class="testimonial-image"></div>
+             </div>
+
+             <div class="col-md-6 col-sm-12">
+                  <div class="testimonial-info">
+                       
+                       <div class="section-title">
+                            <h1>Testimonies</h1>
+                       </div>
+
+                       <div class="owl-carousel owl-theme">
+                         {% if tperson %}
+                              {% for item in tperson %}
+                              <div class="item">
+                                   <h3>{{item.testimony}}</h3>
+                                   <div class="testimonial-item">
+                                        <img src="{{item.passport.url}}" class="img-responsive" alt="{{item.testifier}}">
+                                        <h4>{{item.testifier}}</h4>
+                                   </div>
+                              </div>
+                              {% endfor %}      
+                         {% endif %}
+                              
+
+                       </div>
+
+                  </div>
+             </div>
+             
+        </div>
+   </div>
+</section>
+<!-- gallery section -->
+<section id="gallery" class="parallax-section" style="background-color:rgb(12, 26, 54);">
+   <!-- carousel  -->
+
+<div class="container-fluid"> 
+   <div class="content">
+     <div class="slideshow">
+ 
+       <!-- carousel control buttons -->
+       <button class="slide-btn slide-btn-1"></button>
+       <button class="slide-btn slide-btn-2"></button>
+       <button class="slide-btn slide-btn-3"></button>
+       <button class="slide-btn slide-btn-4"></button>
+       <!-- carousel wrapper which contains all images -->
+       <div class="slideshow-wrapper">
+         <div class="slide">
+           <img src="{{fvp.carousel1.url}}" class="slide-img" alt="">
+ 
+         </div>
+         <div class="slide">
+           <img src="{{fvp.carousel2.url}}" class="slide-img" alt="">
+ 
+ 
+         </div>
+         <div class="slide">
+           <img src="{{fvp.carousel3.url}}" class="slide-img" alt=""> 
+ 
+         </div>
+         <div class="slide">
+           <img src="{{fvp.carousel4.url}}" class="slide-img" alt=""> 
+ 
+         </div>
+       </div>    
+     </div>
+   </div>
+ </div>
+ <!-- carousel done --> 
+  <div class="container">
+      <div class="row">
+      
+          <div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.3s">
+               {% if gright %} 
+                    {% for item in gright %}
+                         <a href="{{item.g_img.url}}" data-lightbox-gallery="zenda-gallery"><img src="{{item.g_img.url}}" alt="gallery img"></a>
+                         <div>
+                         <h3 style="color: white;font-weight: 600;">{{item.g_title|title}} </h3>
+                         <span style="font-weight: 400;color: whitesmoke;">{{item.span_info|title}}</span>
+                         </div>
+                    {% endfor %}      
+               {% endif %}    
+          </div>
+          <div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.6s">
+             {% if gport %}  
+               {% for item in gport %}
+                    <a href="{{item.g_img.url}}" data-lightbox-gallery="zenda-gallery"><img src="{{item.g_img.url}}" alt="gallery img"></a>
+                    <div>
+                    <h3 style="color: white;font-weight: 600;">{{item.g_title|title}} </h3>
+                    <span style="font-weight: 400;color: whitesmoke;">{{item.span_info|title}}</span>
+                    </div>
+               {% endfor %}   
+             {% endif %}
+               
+          </div>
+          <div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.9s">
+               {% if gleft %}
+                    {% for item in gleft %}
+                         <a href="{{item.g_img.url}}" data-lightbox-gallery="zenda-gallery"><img src="{{item.g_img.url}}" alt="gallery img"></a>
+                         <div>
+                         <h3 style="color: white;font-weight: 600;">{{item.g_title|title}} </h3>
+                         <span style="font-weight: 400;color: whitesmoke;">{{item.span_info|title}}</span>
+                         </div>
+                    {% endfor %}       
+               {% endif %}
+                    
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+   <!-- CONTACT -->
+   <section id="contact" data-stellar-background-ratio="0.5">
+        <div class="container">
+             <div class="row">
+                  <div class="col-md-offset-1 col-md-10 col-sm-12">
+                       <div class="section-title">
+                            <h1>What's Threading?</h1>
+                            <h1> <a href="{{fvp.thread_link}}" class="fa"><img src="{% static '' %}images/thred_net.jpg" alt=""style="height: 80px;">Click Here</a></h1>
+                       </div>
+                       <div class="section-title">
+                            <h1>Say hello to us</h1>
+                       </div>
+                       <form id="contact-form" role="form" action="{% url 'homepage' %}" method="POST">
+                         {% csrf_token %}
+                            <div class="col-md-4 col-sm-4">
+                                 <input type="text" class="form-control" placeholder="Full name" name="full_name" required="">
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                 <input type="email" class="form-control" placeholder="Email address" name="email" required="">
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                 <input type="submit" class="form-control"  placeholder="submit">
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                 <textarea class="form-control" rows="8" placeholder="Your message" name="message" required=""></textarea>
+                              </div>
+                       </form>
+                  </div>
+
+             </div>
+        </div>
+   </section>   
+{% endblock content %}
+
+
+{% block footer %}
+  {% include 'footer.html' %}
+{% endblock footer %}
+

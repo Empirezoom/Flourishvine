@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block preloader %}
+  {% include 'preloader.html' %}
+{% endblock preloader %}
+
+{% block header2 %}
+  {% include 'header2.html' %}
+{% endblock header2 %}
+
+{% block content %}
+
+
+    
+<!-- PRICING -->
+<section id="pricing" data-stellar-background-ratio="0.5">
+     <div class="container">
+          <div class="row">
+               <div class="col">
+                    <div class="pricing-thumb">
+                        <div class="pricing-title text-center">
+                         <h1 style="color: green;">Chat roo<i class="fa fa-meetup" aria-hidden="true"></i> </h1>
+                             <h2>{{postdet.title|title}}</h2>
+                        </div>
+                        <div class="pricing-info">
+                         <img src="{{postdet.active.url}}" class="img-responsive" alt="">       
+                         <i class="fa fa-clock-o" aria-hidden="true"></i>{{postdet.updated}}
+                         <p>
+                              {{postdet.content|title}}.
+                         </p>
+                        </div>
+                        <div class="pricing-bottom">
+                            <a href="#testimonial" class="fa fa-warning" aria-hidden="true">Chat rules</a>
+                            <a href="https://www.threads.net/@rccgfvp" class="pricing-btn"><img src="{% static '' %}images/thred_net.jpg" alt="threading image"style="height: 55px;"></a>
+                        </div>
+                        {% if request.user.is_authenticated %}
+                        <form action="" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                          <p>
+                            <h4 style="font-weight: bolder;text-decoration:underline;"><strong style="font-weight: 900;">{{com_count}}</strong>Comments</h4>
+                            
+                            {% if comments %}
+                              {% for item in comments %}
+                                <div class="commentbox" style="background-color:ghostwhite;">
+                                  <article>
+                                    
+                                    <div class="testimonial-item">
+                                        <img src="{% static '' %}images/avatar.png" class="img-responsive" alt="profile picture">
+                                        <h4 style="color: green;font-weight: 400;">{{item.commenter|title}}</h4> 
+                                   </div>
+                                 
+                                    <p>
+                                      <strong style="color: royalblue;">
+                                        {{item.body|title}}
+                                      </strong>
+                                    </p>
+                                  </article>
+                                </div>
+                              {% endfor %}
+                            {% endif %}
+                          </p>
+                          <textarea style="width: 100%;resize: none;" name="body" id="" cols="30" rows="10"></textarea>
+                        </div>
+                        <input name="postid" type="hidden" postid="{{post.id}}">
+                        <button class="btn btn-success">Comment</button>
+                        </form>
+                      {% else %}
+                        <h3> Login to Comment</h3>
+                        <p>
+                          <a href="{% url 'signin' %}"><button class="btn btn-success">Login</button></a> 
+                          <p>or</p>
+                          <h3> Signup if u don't have an account</h3>
+                          <a href="{% url 'signin' %}"><button class="btn btn-primary">Sign up</button></a> 
+                        </p>
+                     {% endif %}
+                    </div>
+               </div>
+     </div>
+</section>   
+
+
+
+<section id="testimonial" data-stellar-background-ratio="0.5">
+     <div class="container">
+          <div class="row">
+               <div class="col ">
+                    <div class="testimonial-info">
+                         
+                         <div class="section-title">
+                              <h1>Rules🚩🚩🚩</h1>
+                         </div>
+
+                         <div class="owl-carousel owl-theme">
+                              <div class="item">
+                                   <h3>
+                                        1. Be Friendly and Polite ...🙂
+                                        2. Respond to What Has Been Posted ...👍
+                                        </h3>
+                                   <div class="testimonial-item">
+                                        <img src="{{fvp.logo.url}}" class="img-responsive" alt="logo">
+                                        <h4>Admin</h4>
+                                   </div>
+                              </div>
+
+                              <div class="item">
+                                   <h3>Thank you for your co-operation <span style="color: orange;">{{user.username|title}}</span> we love you ❤️🤟</h3>
+                                   <div class="testimonial-item">
+                                        <img src="{{fvp.logo.url}}" class="img-responsive" alt="logo">
+                                        <h4>Admin</h4>
+                                   </div>
+                              </div>
+
+                           
+                         </div>
+
+                    </div>
+               </div>
+               
+          </div>
+     </div>
+
+</section>
+
+{% endblock content %}
+
+
+{% block footer %}
+  {% include 'footer.html' %}
+{% endblock footer %}
+

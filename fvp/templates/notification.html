@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block preloader %}
+  {% include 'preloader.html' %}
+{% endblock preloader %}
+
+{% block header2 %}
+  {% include 'header2.html' %}
+{% endblock header2 %}
+
+{% block content %}
+        
+  <!-- FEATURE -->
+  <section id="welcoming" data-stellar-background-ratio="0.5">
+     <div class="overlay"></div>
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-offset-3 col-md-6 col-sm-12">
+                    <div class="welcoming-info">
+
+                      {% if celebrants %}
+                            
+                      {% for celebrant in celebrants %}
+                        <h3 style="font-size: larger;font-weight: 900;border: none">
+                          Birthday Celebrant List 
+
+
+
+                          <div class="pricing-thumb" > 
+                            <div class="testimonial-item">
+                                <img src="{{celebrant.pix.url}}" class="img-responsive" style="height:50% ;width: 50%;" alt="Profile picture">
+                                <h4 style="color: gray;font-weight: 900;">{{celebrant.first_name|title}}&nbsp;{{celebrant.last_name|title}}'s celebrant is  <span style="color: orange;font-weight: 900;">Today</span></h4> 
+                          </div>
+                          <div class="pricing-info">
+                                <p><span style="font-weight: 500; color: darkgreen;">Celebrate Our Friend <Span style="font-weight: 900;">{{celebrant.user.username}}</Span> And Send Birthday Wishes </p>
+                          </div>
+                          <div class="pricing-bottom" style="display: inline-block;">
+                            <a class="section-btn" href="mailto:{{celebrant.email}}">Mail</a>
+                            <a href="tel:+234{{celebrant.phone}}" class="section-btn "><i class="fa fa-phone" aria-hidden="true"></i>Call</a>
+                          </div>
+                          
+                
+
+
+                        </h3>
+                      {% endfor %}  
+                   {% endif %}
+                   
+                   {% if adinfo %}
+                         
+              
+                   {% for it in adinfo %}
+                      <img src="{{fvp.logo.url}}" class="img-responsive img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt=""> 
+                      <h2 style="color:white; font-weight: 900;">{{it.the_info}}</h2>
+                      <p style="color: aliceblue;font-weight: 900;">Time of Update:<h5 style="color:wheat; font-weight: 600">{{it.period}}</h5></p>
+                      {% endfor %}
+                        
+                  
+                        
+
+
+
+                    {% else %}
+                    <img src="{{fvp.logo.url}}" class="img-responsive img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt=""> 
+                    <h1>No Notifications For Today</h1>
+                   {% endif %}
+                    
+                 
+                    </div>
+               </div>
+
+
+          </div>
+     </div>
+</section>
+
+
+{% endblock content %}
+
+
+{% block footer %}
+  {% include 'footer.html' %}
+{% endblock footer %}
+

@@ -1,0 +1,108 @@
+{% extends 'base2.html' %}
+{% load static %}
+
+{% block preloader %}
+  {% include 'preloader.html' %}
+{% endblock preloader %}
+
+{% block adminheader %}
+  {% include 'adminheader.html' %}
+{% endblock adminheader %}
+
+{% block content %}
+  
+
+  
+
+ 
+      <!-- FEATURE -->
+      <section id="feature" data-stellar-background-ratio="0.5" style="background-color: rgb(17, 17, 36);">
+          <div class="container">
+               <div class="row">
+                  
+                    <div class="col-md-6 col-sm-6">
+                        
+                         <div class="testimonial-item">
+                              <img src="{% static '' %}images/favicon.jpg" class="img-responsive" alt="Rccg logo"> 
+                              <h4 style="color: white;font-weight: 400;"><i class="fa fa-search" aria-hidden="true">Search Engine</i>
+                                   <p style="color: white;font-weight: 900;">Searched for {{items|title}}</p> 
+                              </h4>
+                            
+                         </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                         <h4><i class="fa fa-user" aria-hidden="true"  style="font-weight: 900;color: white;">Fvp Media Team</i></h4>
+                         <ul class="nav nav-tabs" role="tablist">
+                              <li class="active"><a href="#tab01" aria-controls="tab01" role="tab" data-toggle="tab"  style="font-weight: 900;color: white;"><i class="fa fa-search-plus" aria-hidden="true"></i></a></li>
+                             
+                         </ul>
+
+                         <div class="tab-content">
+                              <div class="tab-pane active" id="tab01" role="tabpanel">
+                                   <div class="tab-pane-item">
+                                        <h3 style="color: white;font-weight: 600;"><i class="fa fa-search" aria-hidden="true"></i> Items List</h3>
+                                        <table class="table">
+                                             <thead class="table-dark">
+                                                  <tr>
+                                                  <th scope="col">#</th>
+                                                  <th scope="col">Post/Activities</th>
+                                                  <th scope="col">Date</th>
+                                                  <th scope="col">Images</th>
+                                                  <th scope="col">Content</th>
+                                                
+                                                  </tr>
+                                             </thead>
+
+
+                                             <tbody>
+                                                  
+                                                  {% if searched_item %}
+                                                       
+                                                       {% for item in searched_item %}
+                                                       <tr style="font-weight: 500;font-family: fantasy;color: black;">
+                                                            <td scope="col">{{item.id}}</td>
+                                                            <td scope="col">{{item.title|title}} </td>
+                                                            <td scope="col">{{item.updated}}</td>
+                                                            <td scope="col"><a href="{% url 'detail' item.slug %}"><img src="{{item.active.url}}" class="img-responsive" style="height: 120px;" alt="logo"></a>
+                                                            </td>
+                                                            <td scope="col">{{item.content|title}}</a>
+                                                            </td>
+                                                           
+                                                       </tr>
+                                                       {% endfor %}
+                                                            
+                                                  {% endif %}
+                                                       
+                                            
+                                             </tbody>
+                                        </table>
+                                     
+                                   </div>
+                              </div>
+
+
+
+                        
+
+                    </div>
+
+
+
+               </div>
+          </div>
+     </section>
+
+{% endblock content %}
+
+
+
+
+
+
+
+  
+
+
+   
+
+
